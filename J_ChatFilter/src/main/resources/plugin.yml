@@ -1,0 +1,8 @@
+name: J_ChatFilter
+version: '${1.0}'
+main: me.jsinco.j_chatfilter.J_ChatFilter
+api-version: 1.19
+commands:
+  filter:
+    description: Chat filter edits
+    usage: /<command> [add|remove]
