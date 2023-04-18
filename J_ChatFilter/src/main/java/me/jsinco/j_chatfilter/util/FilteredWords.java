@@ -32,7 +32,7 @@ public class FilteredWords {
         try{
             customFile.save(file);
         }catch (IOException e){
-            System.out.println("Couldn't save file");
+            System.out.println("Error saving");
         }
     }
 
@@ -41,4 +41,3 @@ public class FilteredWords {
     }
 
 }
-

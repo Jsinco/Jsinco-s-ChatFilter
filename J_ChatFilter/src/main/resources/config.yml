@@ -1,3 +1,8 @@
-#I'm working on allowing users to customize the blocked word message.
-#Censored.yml for censored words AKA blacklist.
-BlockedWord: 'This word is not allowed!'
+# Jsinco's ChatFilter v1.0
+
+# Censored.yml is where censored words AKA blacklisted words are. When adding words manually via
+# inputting them into the file, reload/restart your plugins or server before testing.
+# Note, /filter add and /filter remove will add or remove words without requiring a restart or reload
+
+# Configure the message sent to a player when a message is blocked here VVV
+BlockedWord: "That word is not allowed!"
