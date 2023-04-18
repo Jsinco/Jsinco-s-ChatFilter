@@ -26,7 +26,7 @@ public class ChatListener implements Listener {
         for (String value : CMDCL.CensoredArray) {
             if (pMsg.contains(value)) {
                 e.setCancelled(true);
-                p.sendMessage(ChatColor.RED + "DEBUG: That word is not allowed!");
+                p.sendMessage(ChatColor.RED + "That word is not allowed!");
                 break;
             }
         }

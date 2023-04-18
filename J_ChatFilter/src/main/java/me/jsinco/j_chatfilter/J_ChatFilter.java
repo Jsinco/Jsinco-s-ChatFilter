@@ -3,17 +3,16 @@ package me.jsinco.j_chatfilter;
 import me.jsinco.j_chatfilter.util.FilteredWords;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
+/* For me
+permissions so mods,admins, and ops and see word that was blocked and which player sent it. also so only those players can access /filter
+config, etc
+ */
 
 public final class J_ChatFilter extends JavaPlugin {
 
-    //String MsgPlayer = getConfig().getString()
     String[] DefaultCensored = new String[]{"nigga", "nigger", "nig", "faggot", "coon", "africoon", "chink", "fag", "retard"};
-
     @Override
     public void onEnable() {
-
-
         //Setup config
         getConfig().options().copyDefaults();
         saveDefaultConfig();
@@ -33,8 +32,5 @@ public final class J_ChatFilter extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-
     }
-
-
 }

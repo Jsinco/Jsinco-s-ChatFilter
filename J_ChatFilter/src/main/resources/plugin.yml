@@ -5,4 +5,4 @@ api-version: 1.19
 commands:
   filter:
     description: Chat filter edits
-    usage: /<command> [add|remove]
+    usage: /<command>
