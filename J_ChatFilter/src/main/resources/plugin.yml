@@ -2,6 +2,7 @@ name: J_ChatFilter
 version: 1.0
 main: me.jsinco.j_chatfilter.J_ChatFilter
 api-version: 1.19
+load: STARTUP
 commands:
   filter:
     permission: filter.command

@@ -1,10 +1,13 @@
 package me.jsinco.j_chatfilter.util;
 
+import me.jsinco.j_chatfilter.CommandClass;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class FilteredWords {
     private static File file;
@@ -32,7 +35,7 @@ public class FilteredWords {
         try{
             customFile.save(file);
         }catch (IOException e){
-            System.out.println("Error saving");
+            System.out.println("Couldn't save file");
         }
     }
 
@@ -40,4 +43,6 @@ public class FilteredWords {
         customFile = YamlConfiguration.loadConfiguration(file);
     }
 
+
 }
+

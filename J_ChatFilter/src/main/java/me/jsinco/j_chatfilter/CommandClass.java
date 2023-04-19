@@ -11,15 +11,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CommandClass implements CommandExecutor {
+//bug with ts idk how to fix it atm im gonna worry about it later tho
+static ArrayList<String> CensoredArray = new ArrayList<>(Arrays.asList(FilteredWords.get().getString("CensoredWords")
+        .replace("[","").replace("]","").replace(" ", "").split(",")));
 
-    ArrayList<String> CensoredArray =
-            new ArrayList<>(Arrays.asList(FilteredWords.get().getString("CensoredWords")
-                    .replace("[","").replace("]","").replace(" ", "").split(",")));
 
-    boolean FilterToggle = true;
+
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
+
         Player p = (Player) commandSender;
 
         if (args.length > 0) {
@@ -88,50 +89,8 @@ public class CommandClass implements CommandExecutor {
         return true;
     }
 
-    public void UpdateYML(){
+    private void UpdateYML(){
         FilteredWords.get().set("CensoredWords", CensoredArray);
         FilteredWords.save();
     }
 }
-
-/*
-if (args[0].equalsIgnoreCase("removeall")) {
-                if (args[1].equalsIgnoreCase("confirm")) {
-                    CensoredArray.clear();
-                    UpdateYML();
-                    p.sendMessage(ChatColor.GRAY + "Blacklist cleared");
-                } else {
-                    p.sendMessage(ChatColor.GRAY +
-                            "This will delete all words in your blacklist. If you are sure do /filter removeall confirm");
-                }
-            } else if (!args[1].isEmpty()) { //args 1 cannot be empty
-                if (args[0].equalsIgnoreCase("add")) { //if arg is add
-                    CensoredArray.add(args[1]); //adds arg 1 (word) to array
-                    UpdateYML();//updates the yml file and saves it
-
-                    p.sendMessage(ChatColor.GRAY + "Blacklisted " + ChatColor.GOLD + "'" + args[1] + "'");
-                } else if (args[0].equalsIgnoreCase("remove")) { //if arg is remove
-                    boolean wordFound = false;
-
-                    for (int i = 0; i < CensoredArray.size(); i++) {
-                        if (args[1].equalsIgnoreCase(CensoredArray.get(i))) {
-                            CensoredArray.remove(i);
-                            UpdateYML();
-                            wordFound = true;
-
-                            p.sendMessage(ChatColor.GRAY + "Whitelisted " + ChatColor.GOLD + "'" + args[1] + "'");
-                            break;
-                        }
-                    }
-                    //tell the user if word was found or not
-                    if (!wordFound) {
-                        p.sendMessage("Word not found in list");
-                    }
-                } else {
-                    p.sendMessage("missing arg");
-                }
-            } else {
-                p.sendMessage(ChatColor.RED + "Error: Missing word");
-            }
-
- */
